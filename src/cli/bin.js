@@ -1,5 +1,6 @@
 #! /usr/bin/env node
 
+/* eslint-disable no-console */
 'use strict'
 
 process.on('uncaughtException', (err) => {
@@ -24,7 +25,7 @@ const pkg = require('../../package.json')
 const parser = require('./parser')
 const commandAlias = require('./command-alias')
 
-async function main (args) {
+function main (args) {
   const oneWeek = 1000 * 60 * 60 * 24 * 7
   updateNotifier({ pkg, updateCheckInterval: oneWeek }).notify()
 
